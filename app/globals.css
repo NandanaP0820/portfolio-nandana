@@ -104,9 +104,16 @@
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
-@keyframes nucleus {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+@keyframes helix-dot {
+  0% { transform: translateX(-46px) scale(1); opacity: 0.9; z-index: 1; }
+  25% { transform: translateX(0) scale(0.55); opacity: 0.35; z-index: 0; }
+  50% { transform: translateX(46px) scale(1); opacity: 0.9; z-index: 1; }
+  75% { transform: translateX(0) scale(1.45); opacity: 1; z-index: 2; }
+  100% { transform: translateX(-46px) scale(1); opacity: 0.9; z-index: 1; }
+}
+@keyframes helix-rung {
+  0%, 50%, 100% { transform: scaleX(1); opacity: 0.8; }
+  25%, 75% { transform: scaleX(0.04); opacity: 0.2; }
 }
 @keyframes glow {
   0%, 100% { opacity: 0.5; transform: scale(0.9); }
@@ -130,10 +137,11 @@
 .animate-spin-slow {
   animation: spin-slow 24s linear infinite;
 }
-.animate-nucleus {
-  animation: nucleus 2.4s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
+.helix-dot {
+  animation: helix-dot 3.6s linear infinite;
+}
+.helix-rung {
+  animation: helix-rung 3.6s ease-in-out infinite;
 }
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
@@ -148,7 +156,8 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-ecg,
   .animate-spin-slow,
-  .animate-nucleus,
+  .helix-dot,
+  .helix-rung,
   .animate-glow,
   .animate-float,
   .animate-cell {

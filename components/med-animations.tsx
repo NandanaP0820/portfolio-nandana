@@ -34,29 +34,34 @@ export function Pill({ className, rotate = 0 }: { className?: string; rotate?: n
   )
 }
 
-const orbitPath = 'M10 80 a70 26 0 1 0 140 0 a70 26 0 1 0 -140 0'
-const orbits = [
-  { angle: 0, duration: '3s' },
-  { angle: 60, duration: '3.8s' },
-  { angle: 120, duration: '4.6s' },
-]
+const HELIX_PAIRS = 16
+const HELIX_DURATION = 3.6
 
-export function Atom({ className }: { className?: string }) {
+export function DnaHelix({ className }: { className?: string }) {
   return (
-    <div aria-hidden="true" className={cn('relative size-44 shrink-0', className)}>
-      <span className="animate-glow absolute inset-10 rounded-full bg-accent/30 blur-2xl" />
-      <svg viewBox="0 0 160 160" fill="none" className="animate-spin-slow relative size-full">
-        {orbits.map(({ angle, duration }) => (
-          <g key={angle} transform={`rotate(${angle} 80 80)`}>
-            <path d={orbitPath} stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" />
-            <circle r="5" className="fill-accent motion-reduce:hidden">
-              <animateMotion dur={duration} repeatCount="indefinite" path={orbitPath} />
-            </circle>
-          </g>
-        ))}
-        <circle cx="80" cy="80" r="13" className="animate-nucleus fill-primary-foreground" />
-        <circle cx="76" cy="76" r="4" className="fill-accent" />
-      </svg>
+    <div aria-hidden="true" className={cn('relative flex h-64 w-44 shrink-0 items-center justify-center', className)}>
+      <span className="animate-glow absolute inset-6 rounded-full bg-accent/30 blur-3xl" />
+      <div className="relative flex -rotate-[24deg] flex-col gap-[7px]">
+        {Array.from({ length: HELIX_PAIRS }, (_, i) => {
+          const delay = `${(-i * HELIX_DURATION) / HELIX_PAIRS}s`
+          return (
+            <div key={i} className="relative flex h-2 w-28 items-center justify-center">
+              <span
+                className="helix-rung absolute h-[2px] w-[92px] rounded-full bg-gradient-to-r from-accent/70 via-primary-foreground/40 to-primary-foreground/70"
+                style={{ animationDelay: delay }}
+              />
+              <span
+                className="helix-dot absolute size-2.5 rounded-full bg-accent shadow-[0_0_10px_2px] shadow-accent/70"
+                style={{ animationDelay: delay }}
+              />
+              <span
+                className="helix-dot absolute size-2.5 rounded-full bg-primary-foreground shadow-[0_0_10px_2px] shadow-primary-foreground/60"
+                style={{ animationDelay: `calc(${delay} - ${HELIX_DURATION / 2}s)` }}
+              />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

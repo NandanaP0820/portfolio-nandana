@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { competencies } from '@/lib/site'
-import { Atom } from '@/components/med-animations'
+import { DnaHelix } from '@/components/med-animations'
 
 export function CompetencyCta() {
   return (
@@ -30,7 +30,7 @@ export function CompetencyCta() {
             <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </div>
-        <Atom className="hidden md:block" />
+        <DnaHelix className="hidden md:flex" />
       </Link>
     </section>
   )
