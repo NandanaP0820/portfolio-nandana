@@ -1,6 +1,6 @@
 import { Camera } from 'lucide-react'
 import { site } from '@/lib/site'
-import { Cell, EcgLine, Heart, Pill, Plus } from '@/components/med-animations'
+import { Cell, EcgLine, Pill, Plus } from '@/components/med-animations'
 
 export function Hero() {
   return (
@@ -14,7 +14,6 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1fr_auto] md:py-24">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-sm font-medium text-secondary-foreground">
-            <Heart className="size-4 text-primary" />
             Medicine Portfolio
           </p>
           <h1 className="mt-6 text-balance font-serif text-5xl font-semibold leading-tight text-primary md:text-7xl">

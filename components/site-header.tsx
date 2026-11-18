@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { site } from '@/lib/site'
-import { Heart } from '@/components/med-animations'
 
 const links = [
   { href: '/#about', label: 'About' },
@@ -17,7 +16,6 @@ export function SiteHeader() {
         className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4"
       >
         <Link href="/" className="flex items-center gap-2 font-serif text-xl font-semibold text-primary">
-          <Heart className="size-5 text-accent" />
           {site.name}
         </Link>
         <ul className="flex items-center gap-1 text-sm sm:gap-2">

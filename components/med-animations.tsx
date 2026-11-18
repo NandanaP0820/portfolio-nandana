@@ -21,17 +21,6 @@ export function EcgLine({ className }: { className?: string }) {
   )
 }
 
-export function Heart({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={cn('animate-heartbeat', className)}>
-      <path
-        fill="currentColor"
-        d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"
-      />
-    </svg>
-  )
-}
-
 export function Pill({ className, rotate = 0 }: { className?: string; rotate?: number }) {
   return (
     <div
@@ -45,20 +34,29 @@ export function Pill({ className, rotate = 0 }: { className?: string; rotate?: n
   )
 }
 
-export function Dna({ className }: { className?: string }) {
+const orbitPath = 'M10 80 a70 26 0 1 0 140 0 a70 26 0 1 0 -140 0'
+const orbits = [
+  { angle: 0, duration: '3s' },
+  { angle: 60, duration: '3.8s' },
+  { angle: 120, duration: '4.6s' },
+]
+
+export function Atom({ className }: { className?: string }) {
   return (
-    <div aria-hidden="true" className={cn('flex flex-col items-center gap-2', className)}>
-      {Array.from({ length: 8 }).map((_, i) => (
-        <div
-          key={i}
-          className="animate-helix flex w-16 items-center justify-between"
-          style={{ animationDelay: `${i * -0.3}s` }}
-        >
-          <span className="size-2.5 rounded-full bg-primary" />
-          <span className="h-0.5 flex-1 bg-primary/30" />
-          <span className="size-2.5 rounded-full bg-accent" />
-        </div>
-      ))}
+    <div aria-hidden="true" className={cn('relative size-44 shrink-0', className)}>
+      <span className="animate-glow absolute inset-10 rounded-full bg-accent/30 blur-2xl" />
+      <svg viewBox="0 0 160 160" fill="none" className="animate-spin-slow relative size-full">
+        {orbits.map(({ angle, duration }) => (
+          <g key={angle} transform={`rotate(${angle} 80 80)`}>
+            <path d={orbitPath} stroke="currentColor" strokeOpacity="0.35" strokeWidth="1.5" />
+            <circle r="5" className="fill-accent motion-reduce:hidden">
+              <animateMotion dur={duration} repeatCount="indefinite" path={orbitPath} />
+            </circle>
+          </g>
+        ))}
+        <circle cx="80" cy="80" r="13" className="animate-nucleus fill-primary-foreground" />
+        <circle cx="76" cy="76" r="4" className="fill-accent" />
+      </svg>
     </div>
   )
 }
