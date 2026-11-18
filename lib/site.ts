@@ -12,9 +12,9 @@ import {
 } from 'lucide-react'
 
 export const site = {
-  name: 'Dr. Name',
+  name: 'Dr. Nandana',
   title: 'Medical Doctor',
-  email: 'your@email.com',
+  email: 'nandanapraveen2008@gmail.com',
 }
 
 export type Competency = {
