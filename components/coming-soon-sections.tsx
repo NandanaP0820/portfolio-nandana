@@ -9,11 +9,27 @@ const sections = [
 
 export function AboutSection() {
   return (
-    <section id="about" aria-labelledby="about-title" className="mx-auto max-w-3xl scroll-mt-24 px-5 text-center">
-      <h2 id="about-title" className="font-serif text-4xl font-semibold text-primary">
+    <section id="about" aria-labelledby="about-title" className="mx-auto max-w-3xl scroll-mt-24 px-5">
+      <h2 id="about-title" className="text-center font-serif text-4xl font-semibold text-primary">
         About Me
       </h2>
-      <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">Coming soon.</p>
+      <div className="mt-6 space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
+        <p>
+          I’m Nandana Praveen, a Year 1 MD student at Gulf Medical University with a strong interest
+          in medicine and in the human side of patient care. I am still early in my training, but I
+          am eager to learn, to reflect honestly on my experiences, and to grow into a physician who
+          is both knowledgeable and compassionate.
+        </p>
+        <p>
+          Outside my studies, I practice classical dance, which has taught me discipline, patience,
+          and the value of consistent practice. It also gives me a creative outlet and helps me stay
+          balanced during a demanding course like MD.
+        </p>
+        <p>
+          This portfolio brings together my experiences, reflections, and progress across the nine
+          competencies. It is a record of where I am now and a guide for where I want to improve.
+        </p>
+      </div>
     </section>
   )
 }
