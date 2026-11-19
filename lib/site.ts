@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 
 export const site = {
-  name: 'Dr. Name',
+  name: 'Nandana Praveen',
   title: 'Medical Doctor',
   email: 'your@email.com',
 }
