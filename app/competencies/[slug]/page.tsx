@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import {
@@ -14,61 +15,48 @@ import { competencies } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
-const focusAreas: Record<number, string[]> = {
-  1: [
-    'Build a sound foundation in biomedical and clinical knowledge.',
-    'Use structured reasoning to understand problems and consider appropriate next steps.',
-    'Apply knowledge carefully, recognising limits and seeking supervision when needed.',
-  ],
-  2: [
-    'Find and interpret reliable scientific and clinical information.',
-    'Assess evidence critically instead of relying on the first available answer.',
-    'Use reflection and ongoing learning to improve future decisions.',
-  ],
-  3: [
-    'Approach people with empathy, respect and attention to their individual needs.',
-    'Consider health beyond the immediate clinical problem, including prevention and wellbeing.',
-    'Recognise opportunities to advocate for patients and their communities.',
-  ],
-  4: [
-    'Listen actively and communicate ideas in clear, accessible language.',
-    'Adapt communication to the needs, concerns and backgrounds of others.',
-    'Share information respectfully with peers and members of a healthcare team.',
-  ],
-  5: [
-    'Contribute reliably to a shared goal and recognise the strengths of different team members.',
-    'Use creative, evidence-informed thinking to identify practical improvements.',
-    'Lead through initiative, clear communication, accountability and support for others.',
-  ],
-  6: [
-    'Act with honesty, integrity and respect in academic and professional settings.',
-    'Protect confidentiality and understand the importance of trust.',
-    'Take responsibility for decisions, commitments and areas that need improvement.',
-  ],
-  7: [
-    'Understand how people, services and resources connect across a health system.',
-    'Recognise how teamwork, safety and efficient processes influence quality of care.',
-    'Consider how system-level improvements can make care more accessible and effective.',
-  ],
-  8: [
-    'Set meaningful learning goals and respond constructively to feedback.',
-    'Maintain personal wellbeing and recognise when support is needed.',
-    'Contribute to a learning culture and the ongoing development of the profession.',
-  ],
-  9: [
-    'Respect the needs and experiences of people from different backgrounds.',
-    'Consider health inequalities and the wider factors that influence health.',
-    'Support prevention, community wellbeing and socially responsible practice.',
-  ],
-}
-
 const reflectionParagraphs = [
-  'During a group-based academic task, I worked with classmates to research a health-related topic and prepare a shared presentation. We needed to combine information from different sources, agree on the most relevant points and deliver one clear explanation. I helped clarify the shared objective, divide the work according to strengths and bring the separate contributions together.',
-  'I felt motivated by the opportunity to work with others, but I was also aware that different working styles could make coordination difficult. I wanted the final work to be cohesive without overlooking anyone’s ideas. At times, I felt responsible for keeping the task moving, and I had to remind myself that collaboration meant listening as much as taking initiative.',
-  'A strength of the experience was that sharing responsibilities allowed us to approach the topic from different perspectives. Agreeing on the main message helped the presentation become clearer. However, communication was not always consistent, and some parts needed extra time to combine. I could have clarified expectations and checked progress earlier rather than waiting until the final stages.',
-  'This showed me that leadership is not simply assigning tasks or making decisions. It involves creating an environment in which people understand the goal, feel comfortable contributing and can rely on one another. Collaboration also creates room for innovation: when different viewpoints are considered, the group can identify a more useful way to explain a topic or solve a problem. Clear roles, realistic deadlines and regular communication make that creativity achievable.',
-  'I learned that I can contribute by taking initiative while remaining open to feedback. I also recognised that a good outcome depends on the process, not only the final presentation. I need to be more deliberate about following up, addressing uncertainty early and making sure quieter team members have an opportunity to contribute.',
-  'For my next group task, I will arrange a brief planning discussion, agree on one written objective and assign each task to a named person based on their strengths. I will set internal deadlines at least 48 hours before submission, keep a shared progress checklist and organise a midpoint check-in. I will invite each member to raise concerns, ask a peer or tutor for feedback afterwards and record two changes for the next project. I will also test any new idea against the available evidence, time and resources before recommending it.',
+  'On 15 October 2026, I helped organise World Anatomy Day at Gulf Medical University’s College of Medicine. The event brought students together to explore anatomy through displays, discussion and interactive learning. I worked alongside my classmates to prepare and run the activity, communicate ideas on the whiteboard, and engage with participants around the anatomical model. Being part of the organising team meant contributing to the event’s delivery as well as its educational purpose.',
+  'I felt excited to take part, but I was also conscious of the responsibility involved in helping an event run smoothly. I wanted visitors to feel welcome and to understand the anatomy activities, while making sure I communicated clearly with my own team. Taking an active role in front of others challenged me to be confident, approachable and prepared.',
+  'A positive part of the experience was seeing how much more engaging anatomy became when we used visual explanations, discussion and a physical model rather than relying only on verbal information. Working with classmates allowed us to share tasks and support one another. The photographs show me contributing to the group activity, writing on the board and taking part in presenting the anatomical model. One challenge was making sure our different contributions came together as one coordinated event; this required us to communicate and adjust as we went.',
+  'The experience helped me understand that leadership is not limited to giving instructions. It also means being dependable, noticing what needs to be done, listening to others and helping the group stay focused on a shared purpose. Collaboration made it possible to combine different strengths, while the use of the whiteboard and anatomical model helped make the learning activity more interactive. Organising the event showed me that innovation can be practical: choosing an engaging way to explain a concept can improve how people participate and learn.',
+  'I learned that I can contribute through initiative and teamwork, but that good organisation needs planning as well as flexibility. I also recognised that I should communicate expectations early and check that everyone knows their responsibilities. Receiving a Certificate of Appreciation for organising World Anatomy Day was encouraging, and it reminded me that successful events depend on the combined effort of the whole team.',
+  'For the next event I help organise, I will prepare a written run sheet at least one week beforehand, list every task and assign a named person and deadline to each one. I will arrange a short planning meeting, check that the materials and anatomical models are ready, and rehearse the activity explanations with my team. On the day, I will use a simple checklist and hold brief progress checks so that problems can be addressed early. Afterwards, I will ask at least three participants and my teammates for feedback, hold a short debrief, and record three specific improvements to apply to the next activity.',
+]
+
+const eventPhotos = [
+  {
+    src: '/world-anatomy-day/team-discussion.webp',
+    alt: 'Nandana working with classmates during a World Anatomy Day activity',
+    title: 'Working as a team',
+    caption: 'Collaborating with classmates and contributing ideas during the activity.',
+    width: 850,
+    height: 540,
+  },
+  {
+    src: '/world-anatomy-day/event-team.webp',
+    alt: 'Students and faculty gathered for World Anatomy Day at Gulf Medical University',
+    title: 'The World Anatomy Day team',
+    caption: 'A group photograph with the students and faculty involved in the event.',
+    width: 850,
+    height: 567,
+  },
+  {
+    src: '/world-anatomy-day/anatomy-model.webp',
+    alt: 'Nandana and classmates presenting an anatomical model',
+    title: 'Interactive anatomy learning',
+    caption: 'Taking part in presenting an anatomical model as a visual learning resource.',
+    width: 850,
+    height: 566,
+  },
+  {
+    src: '/world-anatomy-day/whiteboard-activity.webp',
+    alt: 'Nandana writing on the activity whiteboard during World Anatomy Day',
+    title: 'Contributing to the activity',
+    caption: 'Using the whiteboard to help communicate and organise information.',
+    width: 850,
+    height: 567,
+  },
 ]
 
 type PageProps = {
@@ -149,113 +137,146 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
         </section>
 
         <div className="mx-auto max-w-5xl space-y-14 px-5 pt-12 md:pt-16">
-          <section aria-labelledby="domain-heading" className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                Competency domain
-              </p>
-              <h2 id="domain-heading" className="mt-3 font-serif text-3xl font-semibold">
-                What this competency means
-              </h2>
-            </div>
-            <div className="rounded-3xl border border-border bg-card p-6 shadow-sm md:p-8">
-              <p className="leading-relaxed text-muted-foreground">
-                {competency.number === 5
-                  ? 'Working effectively with others, recognising opportunities to improve the way things are done, and taking responsibility for helping a team move towards a shared goal. In medicine, collaboration and thoughtful leadership support safer, more coordinated and more responsive care.'
-                  : competency.description}
-              </p>
-              <ul className="mt-6 space-y-3">
-                {focusAreas[competency.number].map((item) => (
-                  <li key={item} className="flex gap-3 leading-relaxed">
-                    <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
           {isComplete ? (
-            <section id="reflection" aria-labelledby="reflection-heading">
-              <div className="max-w-3xl">
+            <>
+              <section id="reflection" aria-labelledby="reflection-heading">
+                <div className="max-w-3xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                    Personal reflection
+                  </p>
+                  <h2 id="reflection-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
+                    Learning through collaboration
+                  </h2>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Reflecting on my role in organising World Anatomy Day at Gulf Medical University.
+                  </p>
+                </div>
+                <div className="mt-7 max-w-3xl space-y-5">
+                  {reflectionParagraphs.map((paragraph, paragraphIndex) => (
+                    <p key={paragraphIndex} className="text-base leading-8 text-foreground/85">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </section>
+
+              <section aria-labelledby="event-photos-heading">
+                <div className="max-w-2xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                    Event gallery
+                  </p>
+                  <h2 id="event-photos-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
+                    World Anatomy Day
+                  </h2>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">
+                    Moments from the event, showing teamwork, interactive anatomy learning and my contribution to the activities.
+                  </p>
+                </div>
+
+                <div className="mt-7 grid gap-5 sm:grid-cols-2">
+                  {eventPhotos.map((photo, photoIndex) => (
+                    <figure
+                      key={photo.src}
+                      className={photoIndex === 1 ? 'overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm sm:col-span-2' : 'overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm'}
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={photo.width}
+                        height={photo.height}
+                        sizes={photoIndex === 1 ? '(max-width: 640px) 100vw, 90vw' : '(max-width: 640px) 100vw, 45vw'}
+                        className={photoIndex === 1 ? 'h-auto max-h-[560px] w-full rounded-2xl object-cover' : 'h-auto w-full rounded-2xl object-cover'}
+                      />
+                      <figcaption className="px-2 pb-2 pt-4">
+                        <h3 className="font-serif text-xl font-semibold">{photo.title}</h3>
+                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{photo.caption}</p>
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </section>
+
+              <section aria-labelledby="certificate-heading">
+                <div className="max-w-2xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                    Recognition
+                  </p>
+                  <h2 id="certificate-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
+                    Certificate of Appreciation
+                  </h2>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">
+                    Awarded to Nandana Praveen by Gulf Medical University’s College of Medicine for organising World Anatomy Day.
+                  </p>
+                </div>
+                <a
+                  href="/world-anatomy-day-certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 block max-w-3xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  aria-label="Open the World Anatomy Day Certificate of Appreciation PDF"
+                >
+                  <Image
+                    src="/world-anatomy-day/certificate.webp"
+                    alt="Certificate of Appreciation awarded to Nandana Praveen for organising World Anatomy Day by Gulf Medical University College of Medicine"
+                    width={1049}
+                    height={742}
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="h-auto w-full rounded-2xl"
+                  />
+                  <span className="flex items-center justify-center gap-2 px-3 py-4 text-sm font-semibold text-primary">
+                    <FileBadge className="size-4" aria-hidden="true" />
+                    View certificate
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </span>
+                </a>
+              </section>
+            </>
+          ) : (
+            <>
+              <section aria-labelledby="reflection-heading" className="rounded-3xl border border-dashed border-border bg-card/70 p-7 md:p-9">
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
                   Personal reflection
                 </p>
-                <h2 id="reflection-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
-                  Learning through collaboration
+                <h2 id="reflection-heading" className="mt-3 font-serif text-3xl font-semibold">
+                  Your reflection will go here
                 </h2>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  A reflective account structured around Gibbs’ reflective cycle.
+                <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
+                  Use this space to document an experience, what you learned from it and how it
+                  shaped your development in this competency.
                 </p>
-              </div>
-              <div className="mt-7 max-w-3xl space-y-5">
-                {reflectionParagraphs.map((paragraph, paragraphIndex) => (
-                  <p key={paragraphIndex} className="text-base leading-8 text-foreground/85">
-                    {paragraph}
+              </section>
+
+              <section aria-labelledby="evidence-heading">
+                <div className="max-w-2xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                    Evidence portfolio
                   </p>
-                ))}
-              </div>
-            </section>
-          ) : (
-            <section aria-labelledby="reflection-heading" className="rounded-3xl border border-dashed border-border bg-card/70 p-7 md:p-9">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                Personal reflection
-              </p>
-              <h2 id="reflection-heading" className="mt-3 font-serif text-3xl font-semibold">
-                Your reflection will go here
-              </h2>
-              <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-                Use this space to document an experience, what you learned from it and how it
-                shaped your development in this competency.
-              </p>
-            </section>
+                  <h2 id="evidence-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
+                    Supporting evidence
+                  </h2>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">
+                    Add relevant photographs, certificates or other supporting material as you develop this competency.
+                  </p>
+                </div>
+                <div className="mt-7 grid gap-5 md:grid-cols-2">
+                  <div className="rounded-3xl border border-dashed border-border bg-card p-5">
+                    <div className="flex aspect-[16/9] flex-col items-center justify-center rounded-2xl bg-secondary/65 text-center">
+                      <Camera className="size-8 text-primary/70" aria-hidden="true" />
+                      <span className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Photo placeholder</span>
+                      <span className="mt-1 text-sm text-muted-foreground">Add your photographs here</span>
+                    </div>
+                  </div>
+                  <div className="rounded-3xl border border-dashed border-border bg-card p-5">
+                    <div className="flex aspect-[16/9] flex-col items-center justify-center rounded-2xl bg-secondary/65 text-center">
+                      <FileBadge className="size-8 text-primary/70" aria-hidden="true" />
+                      <span className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Document placeholder</span>
+                      <span className="mt-1 text-sm text-muted-foreground">Add certificate or evidence</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </>
           )}
-
-          <section aria-labelledby="evidence-heading">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                Evidence portfolio
-              </p>
-              <h2 id="evidence-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
-                Supporting evidence
-              </h2>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
-                {isComplete
-                  ? 'Photographs and certificates can be added here to support this reflection and document the experience.'
-                  : 'Add relevant photographs, certificates or other supporting material as you develop this competency.'}
-              </p>
-            </div>
-
-            <div className="mt-7 grid gap-5 md:grid-cols-2">
-              <div className="rounded-3xl border border-dashed border-border bg-card p-5">
-                <div className="flex aspect-[16/9] flex-col items-center justify-center rounded-2xl bg-secondary/65 text-center">
-                  <Camera className="size-8 text-primary/70" aria-hidden="true" />
-                  <span className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    Photo placeholder
-                  </span>
-                  <span className="mt-1 text-sm text-muted-foreground">Add your photographs here</span>
-                </div>
-                <h3 className="mt-4 font-serif text-xl font-semibold">Activity photographs</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  Space for images of the activity, teamwork, planning or presentation.
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-dashed border-border bg-card p-5">
-                <div className="flex aspect-[16/9] flex-col items-center justify-center rounded-2xl bg-secondary/65 text-center">
-                  <FileBadge className="size-8 text-primary/70" aria-hidden="true" />
-                  <span className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    Document placeholder
-                  </span>
-                  <span className="mt-1 text-sm text-muted-foreground">Add certificate or evidence</span>
-                </div>
-                <h3 className="mt-4 font-serif text-xl font-semibold">Certificates & documents</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  Space for certificates, letters, presentation slides or feedback.
-                </p>
-              </div>
-            </div>
-          </section>
 
           <nav aria-label="Competency navigation" className="flex flex-col justify-between gap-4 border-t border-border pt-7 sm:flex-row">
             {previous ? (
