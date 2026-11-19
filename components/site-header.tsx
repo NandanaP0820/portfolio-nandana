@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import { Stethoscope } from 'lucide-react'
 import { site } from '@/lib/site'
-import { Heart } from '@/components/med-animations'
 
 const links = [
   { href: '/#about', label: 'About' },
@@ -17,7 +17,9 @@ export function SiteHeader() {
         className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4"
       >
         <Link href="/" className="flex items-center gap-2 font-serif text-xl font-semibold text-primary">
-          <Heart className="size-5 text-accent" />
+          <span className="flex size-8 items-center justify-center rounded-full bg-accent/25 text-primary">
+            <Stethoscope className="size-5" aria-hidden="true" />
+          </span>
           {site.name}
         </Link>
         <ul className="flex items-center gap-1 text-sm sm:gap-2">
