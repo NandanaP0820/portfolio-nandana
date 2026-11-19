@@ -1,9 +1,8 @@
-import { Briefcase, FlaskConical, GraduationCap, Presentation } from 'lucide-react'
+import { Briefcase, FlaskConical, Presentation } from 'lucide-react'
 
 const sections = [
   { id: 'research', title: 'Research', icon: FlaskConical },
   { id: 'experience', title: 'Clinical Experience', icon: Briefcase },
-  { id: 'education', title: 'Education', icon: GraduationCap },
   { id: 'presentations', title: 'Presentations', icon: Presentation },
 ]
 
@@ -40,7 +39,7 @@ export function ComingSoonSections() {
       <h2 id="portfolio-title" className="text-center font-serif text-4xl font-semibold text-primary">
         Portfolio
       </h2>
-      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {sections.map(({ id, title, icon: Icon }) => (
           <li
             key={id}
