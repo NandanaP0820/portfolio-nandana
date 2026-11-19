@@ -15,13 +15,13 @@ import { competencies } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
-const reflectionParagraphs = [
-  'On 15 October 2026, I helped organize a stall at World Anatomy Day at my university, an event to help students explore the beauty of anatomy through displays and activities. Alongside my batchmates, I helped run a plank competition where participants held a plank for as long as they could while we explained the anatomy behind it all. I helped set up the whiteboard leaderboard for recording times, welcomed participants, and explained the activity and the anatomical model.',
-  'Since it was my first university event, I felt excited but anxious. I worried about if people would come and if we would be ready. Preparing with my batchmates was fun, and it definitely helped us grow closer. It took a while to get going, but once we found our flow, plenty of people joined in and started competing against each other, and my nerves turned into relief. Explaining the activity and the anatomical model to strangers felt awkward at first, but with each person I gradually grew clearer and more confident. By the end, I felt happy and was glad that our effort had paid off.',
-  'The best part of the whole was seeing participants enjoy the competition and the fact that more people participated than we expected. However, we did not set proper roles, so everyone was doing everything, and coordinating contributions during activities was difficult. We also began preparing only a few days beforehand, so everything felt rushed, and we had to run around gathering materials and making our poster.',
-  'The event went well mostly because the team got along and everyone was willing to help. Preparing together was enjoyable and brought us closer, so even without set roles, people stepped in wherever something had to be done. The lack of defined roles happened because nobody was designated to coordinate, and we all assumed we shared the same understanding. None of us checked, including me. We moved straight into performing without properly agreeing on roles and expectations. Starting late made this worse, since we only had a few days to prepare, there was no time to plan properly or discuss who would do what.',
-  'This experience showed me that teamwork depends on clear communication, listening, and shared responsibility, and that good organization needs planning and follow-up. I could have suggested defining roles and starting earlier and checking progress rather than assuming we all understood the plan.',
-  'At my next event, I will start preparing at least one week ahead, list each task, and assign a named person and deadline. We will hold a planning meeting and rehearse explanations. On the day, I will use a checklist and conduct brief progress checks. Furthermore, after the event I will try to ask participants and teammates for feedback, hold a debrief, and record at least 3 changes for next time.',
+const reflectionStages = [
+  { heading: 'Description', text: 'On 15 October 2026, I organised a stall at World Anatomy Day at my university, an event to help students explore the beauty of anatomy through displays and activities. With my batchmates, I ran a plank competition where participants held a plank for as long as they could while we explained the function of the abdominal muscles. I set up the whiteboard leaderboard, welcomed people to the stall, and explained the activity and anatomical concepts.' },
+  { heading: 'Feelings', text: 'This was my first time organising an event at university, so I felt excited but also a bit anxious. I worried about whether anyone would turn up and whether we would be ready. Preparing with my batchmates was an exhilarating process and helped us grow closer. It took a while to find our flow, but seeing participants arrive motivated me and strengthened our unity. Explaining the competition and concepts to strangers felt awkward at first, but with each interaction, I gradually became clearer and more confident.' },
+  { heading: 'Evaluation', text: 'The best part was seeing how much people enjoyed the competition, with more joining than we expected. However, we never set proper roles, so everyone ended up doing everything, making coordination difficult. We also started preparing only a few days before, so everything felt rushed and we had to run around finding materials and creating our props.' },
+  { heading: 'Analysis', text: 'The event went well mostly because our team got along and everyone was willing to help. Even without set roles, members stepped in whenever something needed to be done. Nobody was designated to coordinate the task, and we all assumed we shared the same understanding. None of us checked, including me. We began performing without properly agreeing on roles and expectations. Our late start made matters worse, leaving too little time to discuss and rehearse properly.' },
+  { heading: 'Conclusion', text: 'This experience taught me that teamwork depends on clear communication, listening and shared responsibility, and that good organisation needs planning and follow-up. Looking back, I could have suggested defining roles and starting earlier, and checked in with teammates instead of assuming we all had the same idea.' },
+  { heading: 'Action plan', text: 'Next time, I will start preparing at least a week before, list every task, and give each one a named person and a deadline. We will hold a planning meeting and rehearse our explanations together. On the day, I will use a checklist and conduct quick progress checks. Afterwards, I will ask participants and teammates for feedback, hold a debrief, and note 3 changes for next time.' },
 ]
 
 const eventPhotos = [
@@ -151,11 +151,12 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                     Reflecting on my role in organising World Anatomy Day at Gulf Medical University.
                   </p>
                 </div>
-                <div className="mt-7 max-w-3xl space-y-5">
-                  {reflectionParagraphs.map((paragraph, paragraphIndex) => (
-                    <p key={paragraphIndex} className="text-base leading-8 text-foreground/85">
-                      {paragraph}
-                    </p>
+                <div className="mt-7 max-w-3xl space-y-7">
+                  {reflectionStages.map((stage) => (
+                    <div key={stage.heading} className="space-y-2">
+                      <h3 className="font-serif text-xl font-semibold text-primary">{stage.heading}</h3>
+                      <p className="text-base leading-8 text-foreground/85">{stage.text}</p>
+                    </div>
                   ))}
                 </div>
               </section>
