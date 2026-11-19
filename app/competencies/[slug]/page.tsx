@@ -26,36 +26,36 @@ const reflectionParagraphs = [
 
 const eventPhotos = [
   {
-    src: '/world-anatomy-day/team-discussion.webp',
+    src: '/world-anatomy-day/team-discussion.jpg',
     alt: 'Nandana working with classmates during a World Anatomy Day activity',
     title: 'Working as a team',
     caption: 'Collaborating with classmates while preparing and running the activity.',
-    width: 900,
-    height: 572,
+    width: 2048,
+    height: 1301,
   },
   {
-    src: '/world-anatomy-day/event-team.webp',
+    src: '/world-anatomy-day/event-team.jpg',
     alt: 'Students and faculty gathered for World Anatomy Day at Gulf Medical University',
     title: 'The World Anatomy Day team',
     caption: 'A group photograph with the students and faculty involved in the event.',
-    width: 900,
-    height: 600,
+    width: 2048,
+    height: 1366,
   },
   {
-    src: '/world-anatomy-day/anatomy-model.webp',
+    src: '/world-anatomy-day/anatomy-model.jpg',
     alt: 'Nandana and classmates presenting an anatomical model',
     title: 'Explaining the anatomical model',
     caption: 'Using the anatomical model to help participants understand the activity.',
-    width: 900,
-    height: 599,
+    width: 2048,
+    height: 1364,
   },
   {
-    src: '/world-anatomy-day/whiteboard-activity.webp',
+    src: '/world-anatomy-day/whiteboard-activity.jpg',
     alt: 'Nandana writing on the activity whiteboard during World Anatomy Day',
     title: 'The activity leaderboard',
     caption: 'Setting up and writing on the whiteboard used to record participants’ plank times.',
-    width: 900,
-    height: 600,
+    width: 2048,
+    height: 1365,
   },
 ]
 
