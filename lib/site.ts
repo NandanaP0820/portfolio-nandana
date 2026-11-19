@@ -13,7 +13,7 @@ import {
 
 export const site = {
   name: 'Nandana Praveen',
-  title: 'Medical Doctor',
+  title: 'Year 1 MD Student',
   email: 'your@email.com',
 }
 
