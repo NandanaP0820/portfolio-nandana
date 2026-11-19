@@ -14,8 +14,8 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1fr_auto] md:py-24">
         <div>
           <h1 className="max-w-3xl text-balance font-serif font-semibold leading-[1.06] text-primary">
-            <span className="block text-5xl md:text-7xl">Nandana Praveen,</span>
-            <span className="mt-2 block text-4xl md:text-6xl">Aspiring Physician,</span>
+            <span className="block text-5xl md:text-7xl">Nandana Praveen</span>
+            <span className="mt-2 block text-4xl md:text-6xl">Aspiring Physician</span>
             <span className="mt-5 block font-sans text-lg font-semibold tracking-[0.12em] text-muted-foreground md:text-xl">
               Year 1 MD Student
             </span>
