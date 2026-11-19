@@ -14,7 +14,7 @@ import {
 export const site = {
   name: 'Nandana Praveen',
   title: 'Year 1 MD Student',
-  email: 'your@email.com',
+  email: 'nandanapraveen2008@gmail.com',
 }
 
 export type Competency = {
