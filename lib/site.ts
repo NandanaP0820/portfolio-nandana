@@ -12,8 +12,8 @@ import {
 } from 'lucide-react'
 
 export const site = {
-  name: 'Dr. Nandana',
-  title: 'Medical Doctor',
+  name: 'Nandana Praveen',
+  title: 'Year 1 MD Student,
   email: 'nandanapraveen2008@gmail.com',
 }
 
