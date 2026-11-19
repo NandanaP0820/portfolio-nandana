@@ -77,7 +77,7 @@ export const competencies: Competency[] = [
   {
     number: 7,
     slug: 'system-based-healthcare-advocate',
-    title: 'System-Based Healthcare Advocate',
+    title: 'Health System Proponent',
     description:
       'Understanding and influencing health system structures to promote better care.',
     icon: Network,
