@@ -209,11 +209,11 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                   </p>
                 </div>
                 <a
-                  href="/world-anatomy-day-certificate.pdf"
+                  href="/world-anatomy-day/certificate.webp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-7 block max-w-3xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  aria-label="Open the World Anatomy Day Certificate of Appreciation PDF"
+                  aria-label="Open the World Anatomy Day Certificate of Appreciation"
                 >
                   <Image
                     src="/world-anatomy-day/certificate.webp"
@@ -225,7 +225,7 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                   />
                   <span className="flex items-center justify-center gap-2 px-3 py-4 text-sm font-semibold text-primary">
                     <FileBadge className="size-4" aria-hidden="true" />
-                    View certificate
+                    View certificate image
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </a>
