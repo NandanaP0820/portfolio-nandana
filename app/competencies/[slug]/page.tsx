@@ -30,32 +30,32 @@ const eventPhotos = [
     alt: 'Nandana working with classmates during a World Anatomy Day activity',
     title: 'Working as a team',
     caption: 'Collaborating with classmates while preparing and running the activity.',
-    width: 1800,
-    height: 1143,
+    width: 800,
+    height: 508,
   },
   {
     src: '/world-anatomy-day/event-team.webp',
     alt: 'Students and faculty gathered for World Anatomy Day at Gulf Medical University',
     title: 'The World Anatomy Day team',
     caption: 'A group photograph with the students and faculty involved in the event.',
-    width: 1800,
-    height: 1201,
+    width: 800,
+    height: 534,
   },
   {
     src: '/world-anatomy-day/anatomy-model.webp',
     alt: 'Nandana and classmates presenting an anatomical model',
     title: 'Explaining the anatomical model',
     caption: 'Using the anatomical model to help participants understand the activity.',
-    width: 1800,
-    height: 1199,
+    width: 800,
+    height: 533,
   },
   {
     src: '/world-anatomy-day/whiteboard-activity.webp',
     alt: 'Nandana writing on the activity whiteboard during World Anatomy Day',
     title: 'The activity leaderboard',
     caption: 'Setting up and writing on the whiteboard used to record participants’ plank times.',
-    width: 1800,
-    height: 1200,
+    width: 800,
+    height: 533,
   },
 ]
 
@@ -185,7 +185,7 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                         width={photo.width}
                         height={photo.height}
                         sizes={photoIndex === 1 ? '(max-width: 640px) 100vw, 90vw' : '(max-width: 640px) 100vw, 45vw'}
-                        className={photoIndex === 1 ? 'h-auto max-h-[640px] w-full rounded-2xl object-contain' : 'h-auto w-full rounded-2xl object-contain'}
+                        className={photoIndex === 1 ? 'mx-auto h-auto max-h-[640px] w-auto max-w-full rounded-2xl object-contain' : 'h-auto w-full rounded-2xl object-contain'}
                         quality={95}
                       />
                       <figcaption className="px-2 pb-2 pt-4">
@@ -209,28 +209,23 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                     Awarded to Nandana Praveen by Gulf Medical University’s College of Medicine for organising World Anatomy Day.
                   </p>
                 </div>
-                <a
-                  href="/world-anatomy-day/certificate.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 block max-w-4xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  aria-label="Open the original World Anatomy Day Certificate of Appreciation PDF"
-                >
-                  <Image
-                    src="/world-anatomy-day/certificate.webp"
-                    alt="Certificate of Appreciation awarded to Nandana Praveen for organising World Anatomy Day by Gulf Medical University College of Medicine"
-                    width={3496}
-                    height={2471}
-                    sizes="(max-width: 768px) 100vw, 896px"
-                    className="h-auto w-full rounded-2xl"
-                    quality={100}
+                <div className="mt-7 max-w-4xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm">
+                  <iframe
+                    src="/world-anatomy-day/certificate.pdf"
+                    title="Certificate of Appreciation awarded to Nandana Praveen for organising World Anatomy Day"
+                    className="h-[72vh] min-h-[520px] w-full rounded-2xl bg-white"
                   />
-                  <span className="flex items-center justify-center gap-2 px-3 py-4 text-sm font-semibold text-primary">
+                  <a
+                    href="/world-anatomy-day/certificate.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 px-3 py-4 text-sm font-semibold text-primary hover:underline"
+                  >
                     <FileBadge className="size-4" aria-hidden="true" />
                     Open original certificate PDF
                     <ArrowRight className="size-4" aria-hidden="true" />
-                  </span>
-                </a>
+                  </a>
+                </div>            </a>
               </section>
             </>
           ) : (
