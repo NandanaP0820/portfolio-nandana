@@ -7,13 +7,13 @@ const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://drmahgolomrani.com'),
+  metadataBase: new URL('https://portfolio-nandana.vercel.app'),
   title: {
-    default: 'Dr. Name | Medicine Portfolio',
-    template: '%s | Dr. Name',
+    default: 'Nandana Praveen | Medicine Portfolio',
+    template: '%s | Nandana Praveen',
   },
   description:
-    'Medical portfolio of Dr. Name — showcasing the nine EmiratesMEDs competencies of medical education in the UAE.',
+    'Medical portfolio of Nandana Praveen — showcasing the nine EmiratesMEDs competencies of medical education in the UAE.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
