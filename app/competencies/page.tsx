@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import { competencies } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -39,27 +39,55 @@ export default function CompetenciesPage() {
         </section>
 
         <ol className="mx-auto grid max-w-6xl gap-5 px-5 sm:grid-cols-2 lg:grid-cols-3">
-          {competencies.map(({ number, title, description, icon: Icon }) => (
-            <li
-              key={number}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
-            >
-              <span
-                aria-hidden="true"
-                className="absolute -right-2 -top-4 font-serif text-8xl font-bold text-secondary transition-colors group-hover:text-accent/40"
-              >
-                {number}
-              </span>
-              <span className="relative flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform group-hover:rotate-6">
-                <Icon className="size-7" aria-hidden="true" />
-              </span>
-              <h2 className="relative mt-5 font-serif text-2xl font-semibold leading-snug">
-                <span className="sr-only">{`Competency ${number}: `}</span>
-                {title}
-              </h2>
-              <p className="relative mt-2 leading-relaxed text-muted-foreground">{description}</p>
-            </li>
-          ))}
+          {competencies.map(({ number, slug, title, description, icon: Icon }) => {
+            const isComplete = number === 5
+
+            return (
+              <li key={number}>
+                <Link
+                  href={`/competencies/${slug}`}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label={`Competency ${number}: ${title}${isComplete ? ', complete' : ''}`}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute -right-2 -top-4 font-serif text-8xl font-bold text-secondary transition-colors group-hover:text-accent/40"
+                  >
+                    {number}
+                  </span>
+                  <span className="relative flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform group-hover:rotate-6">
+                    <Icon className="size-7" aria-hidden="true" />
+                  </span>
+                  <h2 className="relative mt-5 font-serif text-2xl font-semibold leading-snug">
+                    <span className="sr-only">{`Competency ${number}: `}</span>
+                    {title}
+                  </h2>
+                  <p className="relative mt-2 flex-1 leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                  <span
+                    className={
+                      isComplete
+                        ? 'relative mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200'
+                        : 'relative mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-primary'
+                    }
+                  >
+                    {isComplete ? (
+                      <>
+                        <CheckCircle2 className="size-4" aria-hidden="true" />
+                        Complete
+                      </>
+                    ) : (
+                      <>
+                        View details
+                        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                      </>
+                    )}
+                  </span>
+                </Link>
+              </li>
+            )
+          })}
         </ol>
 
         <p className="mx-auto mt-12 max-w-3xl px-5 text-center text-sm text-muted-foreground">
