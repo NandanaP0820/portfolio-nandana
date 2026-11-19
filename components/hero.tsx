@@ -1,4 +1,4 @@
-import { Camera } from 'lucide-react'
+import Image from 'next/image'
 import { site } from '@/lib/site'
 import { Cell, EcgLine, Pill, Plus } from '@/components/med-animations'
 
@@ -31,11 +31,17 @@ export function Hero() {
           <div className="absolute -inset-3 rotate-6 rounded-[2rem] bg-accent/40" aria-hidden="true" />
           <div
             role="img"
-            aria-label={`Photo of ${site.name}`}
-            className="relative flex size-60 flex-col items-center justify-center gap-2 rounded-[2rem] border-4 border-card bg-secondary text-secondary-foreground shadow-xl md:size-72"
+            aria-label={`Portrait of ${site.name}`}
+            className="relative aspect-[3/4] w-60 overflow-hidden rounded-[2rem] border-4 border-card bg-secondary shadow-xl md:w-72"
           >
-            <Camera className="size-10 opacity-60" aria-hidden="true" />
-            <span className="text-sm font-medium opacity-70">Your photo here</span>
+            <Image
+              src="/nandana-portrait.jpg"
+              alt="Nandana Praveen wearing her Gulf Medical University white coat"
+              fill
+              priority
+              sizes="(max-width: 768px) 240px, 288px"
+              className="object-cover object-center"
+            />
           </div>
         </div>
       </div>
