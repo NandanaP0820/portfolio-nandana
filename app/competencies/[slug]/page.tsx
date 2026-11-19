@@ -225,7 +225,7 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                     Open original certificate PDF
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </a>
-                </div>            </a>
+                </div>
               </section>
             </>
           ) : (
