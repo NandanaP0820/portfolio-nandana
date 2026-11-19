@@ -19,6 +19,7 @@ export const site = {
 
 export type Competency = {
   number: number
+  slug: string
   title: string
   description: string
   icon: LucideIcon
@@ -27,6 +28,7 @@ export type Competency = {
 export const competencies: Competency[] = [
   {
     number: 1,
+    slug: 'medical-expert',
     title: 'Medical Expert',
     description:
       'Mastery of the clinical knowledge and skills that form the bedrock of medical practice.',
@@ -34,6 +36,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 2,
+    slug: 'evidence-based-practitioner-scholar',
     title: 'Evidence-Based Practitioner & Scholar',
     description:
       'Applying scientific reasoning and continuous learning to improve patient care.',
@@ -41,6 +44,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 3,
+    slug: 'patient-care-provider-health-advocate',
     title: 'Patient Care Provider & Health Advocate',
     description:
       'Responding to the health needs of both individual patients and their communities.',
@@ -48,6 +52,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 4,
+    slug: 'communicator',
     title: 'Communicator',
     description:
       'Clear, empathetic and effective communication with patients, their families and healthcare teams.',
@@ -55,6 +60,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 5,
+    slug: 'collaborator-innovator-leader',
     title: 'Collaborator, Innovator & Leader',
     description:
       'Teamwork, adaptive thinking and leadership within complex healthcare environments.',
@@ -62,6 +68,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 6,
+    slug: 'professional',
     title: 'Professional',
     description:
       'A commitment to ethical practice, integrity and accountability.',
@@ -69,6 +76,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 7,
+    slug: 'system-based-healthcare-advocate',
     title: 'System-Based Healthcare Advocate',
     description:
       'Understanding and influencing health system structures to promote better care.',
@@ -76,6 +84,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 8,
+    slug: 'self-profession-enhancer',
     title: 'Self & Profession Enhancer',
     description:
       'Lifelong learning, personal wellness and contributing to the advancement of the profession.',
@@ -83,6 +92,7 @@ export const competencies: Competency[] = [
   },
   {
     number: 9,
+    slug: 'socially-accountable-practitioner',
     title: 'Socially Accountable Practitioner',
     description:
       'Serving diverse populations and responding to pressing societal health needs in the UAE.',
