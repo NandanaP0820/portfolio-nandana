@@ -16,12 +16,12 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
 const reflectionParagraphs = [
-  'On 15 October 2026, I helped organise World Anatomy Day at Gulf Medical University’s College of Medicine. The event invited students to explore anatomy through displays and interactive activities. I worked with classmates, contributed to the whiteboard activity and took part in presenting an anatomical model. I also supported the team as we prepared activities and welcomed participants.',
-  'I felt excited to be involved, but I also understood that organising an event required responsibility and coordination. I wanted participants to feel included and to understand the activities. Speaking and contributing in front of others pushed me to be more confident, prepared and clear in how I communicated.',
-  'One of the most rewarding parts was seeing anatomy explained through visuals, discussion and a physical model. Sharing tasks meant we could help one another and make the activity more engaging. The photographs show me working with the group, writing on the whiteboard and presenting the model. A challenge was keeping everyone’s contributions coordinated while activities were taking place.',
-  'This experience showed me that leadership is more than giving instructions. It involves noticing what needs to be done, listening, communicating clearly and taking responsibility for a shared outcome. Collaboration allowed us to use different strengths, while the whiteboard and anatomical model made learning more interactive. I saw how a simple creative approach can help participants connect with anatomical concepts.',
-  'I learned that I can contribute through initiative and teamwork, but that good organisation also needs clear planning and follow-up. I should make responsibilities clear early and check progress rather than assume everyone has the same understanding. Receiving a Certificate of Appreciation for organising the event was encouraging and recognised the effort behind the activity.',
-  'For my next event, I will prepare a written run sheet at least one week ahead, list each task, and assign a named person and deadline. I will hold a planning meeting, confirm that models, display materials and stationery are ready, and rehearse the explanations with the team. On the day, I will use a checklist and brief progress checks. Afterwards, I will ask at least three participants and my teammates for feedback, hold a short debrief, and record three changes to apply next time.',
+  'On 15 October 2026, I helped organize a stall at World Anatomy Day at my university, an event to help students explore the beauty of anatomy through displays and activities. Alongside my batchmates, I helped run a plank competition where participants held a plank for as long as they could while we explained the anatomy behind it all. I helped set up the whiteboard leaderboard for recording times, welcomed participants, and explained the activity and the anatomical model.',
+  'Since it was my first university event, I felt excited but anxious. I worried about if people would come and if we would be ready. Preparing with my batchmates was fun, and it definitely helped us grow closer. It took a while to get going, but once we found our flow, plenty of people joined in and started competing against each other, and my nerves turned into relief. Explaining the activity and the anatomical model to strangers felt awkward at first, but with each person I gradually grew clearer and more confident. By the end, I felt happy and was glad that our effort had paid off.',
+  'The best part of the whole was seeing participants enjoy the competition and the fact that more people participated than we expected. However, we did not set proper roles, so everyone was doing everything, and coordinating contributions during activities was difficult. We also began preparing only a few days beforehand, so everything felt rushed, and we had to run around gathering materials and making our poster.',
+  'The event went well mostly because the team got along and everyone was willing to help. Preparing together was enjoyable and brought us closer, so even without set roles, people stepped in wherever something had to be done. The lack of defined roles happened because nobody was designated to coordinate, and we all assumed we shared the same understanding. None of us checked, including me. We moved straight into performing without properly agreeing on roles and expectations. Starting late made this worse, since we only had a few days to prepare, there was no time to plan properly or discuss who would do what.',
+  'This experience showed me that teamwork depends on clear communication, listening, and shared responsibility, and that good organization needs planning and follow-up. I could have suggested defining roles and starting earlier and checking progress rather than assuming we all understood the plan.',
+  'At my next event, I will start preparing at least one week ahead, list each task, and assign a named person and deadline. We will hold a planning meeting and rehearse explanations. On the day, I will use a checklist and conduct brief progress checks. Furthermore, after the event I will try to ask participants and teammates for feedback, hold a debrief, and record at least 3 changes for next time.',
 ]
 
 const eventPhotos = [
@@ -29,33 +29,33 @@ const eventPhotos = [
     src: '/world-anatomy-day/team-discussion.webp',
     alt: 'Nandana working with classmates during a World Anatomy Day activity',
     title: 'Working as a team',
-    caption: 'Collaborating with classmates and contributing ideas during the activity.',
-    width: 850,
-    height: 540,
+    caption: 'Collaborating with classmates while preparing and running the activity.',
+    width: 1800,
+    height: 1143,
   },
   {
     src: '/world-anatomy-day/event-team.webp',
     alt: 'Students and faculty gathered for World Anatomy Day at Gulf Medical University',
     title: 'The World Anatomy Day team',
     caption: 'A group photograph with the students and faculty involved in the event.',
-    width: 850,
-    height: 567,
+    width: 1800,
+    height: 1201,
   },
   {
     src: '/world-anatomy-day/anatomy-model.webp',
     alt: 'Nandana and classmates presenting an anatomical model',
-    title: 'Interactive anatomy learning',
-    caption: 'Taking part in presenting an anatomical model as a visual learning resource.',
-    width: 850,
-    height: 566,
+    title: 'Explaining the anatomical model',
+    caption: 'Using the anatomical model to help participants understand the activity.',
+    width: 1800,
+    height: 1199,
   },
   {
     src: '/world-anatomy-day/whiteboard-activity.webp',
     alt: 'Nandana writing on the activity whiteboard during World Anatomy Day',
-    title: 'Contributing to the activity',
-    caption: 'Using the whiteboard to help communicate and organise information.',
-    width: 850,
-    height: 567,
+    title: 'The activity leaderboard',
+    caption: 'Setting up and writing on the whiteboard used to record participants’ plank times.',
+    width: 1800,
+    height: 1200,
   },
 ]
 
@@ -185,7 +185,8 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                         width={photo.width}
                         height={photo.height}
                         sizes={photoIndex === 1 ? '(max-width: 640px) 100vw, 90vw' : '(max-width: 640px) 100vw, 45vw'}
-                        className={photoIndex === 1 ? 'h-auto max-h-[560px] w-full rounded-2xl object-cover' : 'h-auto w-full rounded-2xl object-cover'}
+                        className={photoIndex === 1 ? 'h-auto max-h-[640px] w-full rounded-2xl object-contain' : 'h-auto w-full rounded-2xl object-contain'}
+                        quality={95}
                       />
                       <figcaption className="px-2 pb-2 pt-4">
                         <h3 className="font-serif text-xl font-semibold">{photo.title}</h3>
@@ -209,23 +210,24 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                   </p>
                 </div>
                 <a
-                  href="/world-anatomy-day/certificate.webp"
+                  href="/world-anatomy-day/certificate.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-7 block max-w-3xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  aria-label="Open the World Anatomy Day Certificate of Appreciation"
+                  className="mt-7 block max-w-4xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  aria-label="Open the original World Anatomy Day Certificate of Appreciation PDF"
                 >
                   <Image
                     src="/world-anatomy-day/certificate.webp"
                     alt="Certificate of Appreciation awarded to Nandana Praveen for organising World Anatomy Day by Gulf Medical University College of Medicine"
-                    width={1049}
-                    height={742}
-                    sizes="(max-width: 768px) 100vw, 768px"
+                    width={3496}
+                    height={2471}
+                    sizes="(max-width: 768px) 100vw, 896px"
                     className="h-auto w-full rounded-2xl"
+                    quality={100}
                   />
                   <span className="flex items-center justify-center gap-2 px-3 py-4 text-sm font-semibold text-primary">
                     <FileBadge className="size-4" aria-hidden="true" />
-                    View certificate image
+                    Open original certificate PDF
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </a>
