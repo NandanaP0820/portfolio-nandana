@@ -28,8 +28,8 @@ const eventPhotos = [
   {
     src: '/world-anatomy-day/team-discussion.jpg',
     alt: 'Nandana working with classmates during a World Anatomy Day activity',
-    title: 'Working as a team',
-    caption: 'Collaborating with classmates while preparing and running the activity.',
+    title: 'Communicating with participants',
+    caption: 'Sharing the rules of the activity and answering questions along the way.',
     width: 2048,
     height: 1301,
   },
@@ -44,8 +44,8 @@ const eventPhotos = [
   {
     src: '/world-anatomy-day/anatomy-model.jpg',
     alt: 'Nandana and classmates presenting an anatomical model',
-    title: 'Explaining the anatomical model',
-    caption: 'Using the anatomical model to help participants understand the activity.',
+    title: 'Together at the stall',
+    caption: 'A few of us posing with the anatomical model that supported our explanation.',
     width: 2048,
     height: 1364,
   },
@@ -206,9 +206,6 @@ export default async function CompetencyDetailPage({ params }: PageProps) {
                   <h2 id="certificate-heading" className="mt-3 font-serif text-3xl font-semibold md:text-4xl">
                     Certificate of Appreciation
                   </h2>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">
-                    Awarded to Nandana Praveen by Gulf Medical University’s College of Medicine for organising World Anatomy Day.
-                  </p>
                 </div>
                 <div className="mt-7 max-w-4xl overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-sm">
                   <iframe
