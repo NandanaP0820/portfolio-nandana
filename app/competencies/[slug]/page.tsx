@@ -10,7 +10,7 @@ import {
   Lightbulb,
   Plus,
 } from 'lucide-react'
-import { competencies, site } from '@/lib/site'
+import { competencies } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
