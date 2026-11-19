@@ -8,7 +8,7 @@ export function SiteFooter() {
         <EcgLine className="h-8 text-primary/40" />
         <p className="mt-4 text-center text-sm text-muted-foreground">
           {'© '}
-          {new Date().getFullYear()} {site.name} · drmahgolomrani.com
+          {new Date().getFullYear()} {site.name}
         </p>
       </div>
     </footer>
