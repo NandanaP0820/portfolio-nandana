@@ -1,9 +1,8 @@
 'use client'
 
 import { type FormEvent } from 'react'
-import { Mail, Send } from 'lucide-react'
+import { Mail, Send, Stethoscope } from 'lucide-react'
 import { site } from '@/lib/site'
-import { Heart } from '@/components/med-animations'
 
 const inputClass =
   'w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/40'
@@ -24,9 +23,11 @@ export function ContactSection() {
     <section id="contact" aria-labelledby="contact-title" className="mx-auto max-w-6xl scroll-mt-24 px-5">
       <div className="grid gap-10 rounded-[2rem] bg-secondary/60 p-8 md:grid-cols-[1fr_1.3fr] md:p-12">
         <div>
-          <Heart className="size-10 text-primary" />
+          <span className="flex size-14 items-center justify-center rounded-2xl bg-accent/25 text-primary">
+            <Stethoscope className="size-8" aria-hidden="true" />
+          </span>
           <h2 id="contact-title" className="mt-4 font-serif text-4xl font-semibold text-primary">
-            Let&apos;s Connect
+            Let's Connect
           </h2>
           <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
             For collaborations, opportunities, or just a friendly hello, drop me a message.
